@@ -1,5 +1,5 @@
 mod account;
-use std::io::{self, Stdin};
+use std::io;
 fn main() {
     dashboard();
 }
