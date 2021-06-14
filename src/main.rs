@@ -6,16 +6,19 @@ fn main() {
 
 fn dashboard() {
     println!("Welcome to the ATM");
-    println!("Do you have an account? (1 = Y | 2 = N");
+    println!("Do you have an account? y/n");
     let mut choice = String::new();
     io::stdin()
-    .read_line(&mut choice);
+    .read_line(&mut choice)
+    .expect("Error getting input");
 
-    if choice == "1" {
+    if choice == "y" {
+        use account::login;
         login();
     }
 
-    else if choice == "2" {
+    else if choice == "n" {
+        use account::register;
         register();
     }
     
